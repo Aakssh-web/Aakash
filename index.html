@@ -38,13 +38,13 @@
 
 
 :root{
-    --cream:#FBF3EC;
-    --blush:#F0D9D6;
-    --lavender:#D9D3E9;
-    --gold:#C9A876;
-    --plum:#3E2F35;
-    --rose:#E3A9A0;
-    --plum-soft: rgba(62,47,53,0.65);
+    --cream:#E8DED3;
+    --blush:#CFA6A0;
+    --lavender:#B5ABC9;
+    --gold:#A9782C;
+    --plum:#1F171C;
+    --rose:#B75E69;
+    --plum-soft:rgba(31,23,28,0.82);
 }
 
   
@@ -146,7 +146,16 @@
       linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.28));
   }
 
-  .hero > *{position:relative; z-index:1;}
+  .hero > *{
+    
+    background:
+    radial-gradient(circle at 50% 20%, rgba(207,166,160,.55) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(181,171,201,.45) 0%, transparent 55%),
+    #E8DED3;
+    
+    
+    position:relative; z-index:1;
+  }
 
   .hero-eyebrow{
     font-family:'Jost',sans-serif;
@@ -705,7 +714,12 @@
   }
 </style>
 </head>
-<body colour:#2B1F26 >
+<body
+  { 
+  background:#E8DED3;
+    color:var(--plum);
+}
+  >
 
 <canvas id="petal-canvas"></canvas>
 
