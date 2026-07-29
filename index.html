@@ -7,6 +7,40 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
+
+
+  
+
+
+  .sparkle{
+    position:fixed;
+    width:10px;
+    height:10px;
+    pointer-events:none;
+    z-index:9999;
+    animation:sparkle .8s ease-out forwards;
+    filter:drop-shadow(0 0 8px #ffd86b);
+}
+
+@keyframes sparkle{
+    0%{
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translate(-50%,-80px) scale(0);
+    }
+}
+
+
+
+
+
+
+  
+  
   :root{
     --cream:#FBF3EC;
     --blush:#F0D9D6;
@@ -759,6 +793,44 @@
 </div>
 
 <script>
+
+
+
+
+  const emojis = ["✨","⭐","💖"];
+
+function trail(x,y){
+    const s = document.createElement("div");
+    s.className = "sparkle";
+    s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+
+    s.style.left = x + "px";
+    s.style.top = y + "px";
+    s.style.fontSize = (10 + Math.random()*10) + "px";
+
+    document.body.appendChild(s);
+
+    setTimeout(()=>{
+        s.remove();
+    },800);
+}
+
+document.addEventListener("mousemove",(e)=>{
+    trail(e.clientX,e.clientY);
+});
+
+document.addEventListener("touchmove",(e)=>{
+    const t=e.touches[0];
+    trail(t.clientX,t.clientY);
+},{passive:true});
+
+
+
+
+
+
+
+  
   // ---------------- Candle wish ----------------
   const candleWrap = document.getElementById('candleWrap');
   const content = document.getElementById('content');
