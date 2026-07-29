@@ -10,6 +10,40 @@
 
 
 
+
+.gallery-drop{
+  position:fixed;
+  top:-80px;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
+  z-index:9999;
+  font-size:38px;
+  animation:dropEmoji 2.5s ease-in forwards;
+}
+
+@keyframes dropEmoji{
+  0%{
+    transform:translate(-50%,-80px) scale(.3);
+    opacity:0;
+  }
+  15%{opacity:1;}
+  100%{
+    transform:translate(-50%,110vh) scale(3);
+    opacity:0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  
   
 
 
@@ -845,6 +879,44 @@
 
 
 
+
+
+function galleryRain(){
+
+  for(let i=0;i<2;i++){
+
+    setTimeout(()=>{
+
+      const heart=document.createElement("div");
+      heart.className="gallery-drop";
+      heart.innerHTML="👻";
+
+      document.body.appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },2600);
+
+    },i*1000);
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
   const emojis = ["✨","⭐","💖"];
 
 function trail(x,y){
@@ -1006,11 +1078,27 @@ document.addEventListener("touchmove",(e)=>{
     }, 2450);
   }
 
-  galleryGate.addEventListener('click', openGallery);
-  galleryGate.addEventListener('keydown', (e)=>{
+   galleryGate.addEventListener('click', ()=>{
+    galleryRain();
+    openGallery();
+});                        /*galleryGate.addEventListener('click', openGallery);*/
+
+
+  
+ galleryGate.addEventListener('keydown',(e)=>{
+    if(e.key==="Enter" || e.key===" "){
+        e.preventDefault();
+        galleryRain();
+        openGallery();
+    }
+});
+  
+  /*galleryGate.addEventListener('keydown', (e)=>{
     if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGallery(); }
   });
+*/
 
+  
   // ---------------- Envelope open ----------------
   const envelope = document.getElementById('envelope');
   const letterPaper = document.getElementById('letterPaper');
