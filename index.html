@@ -263,8 +263,32 @@
     background: none;
     border: none;
   }
-
-  .candle-wrap::before{
+    
+    
+    
+    
+   .candle-wrap::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:-80px;
+    transform:translateX(-50%);
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(255,230,140,.65) 0%,
+        rgba(255,185,70,.35) 35%,
+        rgba(255,120,20,.15) 60%,
+        transparent 100%);
+    filter:blur(40px);
+    pointer-events:none;
+    z-index:-1; 
+    
+    
+    
+    
+   /* 
     content:'';
     position:absolute;
     inset:-110px -160px -90px -160px;
@@ -274,7 +298,10 @@
     opacity:1;
     transition:opacity 1s ease, transform 1s ease;
     z-index:-1;
-    pointer-events:none;
+    pointer-events:none;      */
+
+
+    
   }
 
   .flame{
