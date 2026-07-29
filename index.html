@@ -163,11 +163,12 @@
     text-transform:uppercase;
     font-size:0.7rem;
     font-weight:600;
-    color:var(--gold);
+    color:  #8d6727    /*var(--gold);*/
     margin-bottom:1.2rem;
     opacity:0;
     animation:fadeIn 1.4s ease forwards;
     animation-delay:0.3s;
+    background: none;
   }
   .highlight-word{
     display:inline-block;
@@ -200,9 +201,11 @@
   }
 
   .hero h1{
+    background: none; 
     font-size:clamp(2.8rem, 8vw, 6rem);
     line-height:1.05;
-    color:#2B1F26;
+    color:#24161d;
+    text-shadow:0 1px 2px rgba(255,255,255,.15);
     opacity:0;
     animation:fadeIn 1.4s ease forwards;
     animation-delay:0.6s;
@@ -215,12 +218,13 @@
   .hero p.sub{
     margin-top:1rem;
     font-size:1rem;
-    font-weight:500;
-    color:var(--plum);
+    font-weight:600;
+    color:#2b1f26;     /*var(--plum)*/
     max-width:420px;
     opacity:0;
     animation:fadeIn 1.4s ease forwards;
     animation-delay:0.9s;
+    background: none;
   }
 
   .dark-phase .hero-eyebrow,
